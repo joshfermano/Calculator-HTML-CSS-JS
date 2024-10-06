@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --body-bg-color: #fffbe6;
+  --text-color: #fff;
+  --calculator-app-color: #000000;
+  --buttons-color: #1e201e;
+  --action-operator-color: #3c3d37;
+  --display-bg-color: #686d76;
+  --display-operator-color: #3c3d37;
+  --display-brackets-color: #526d82;
+  --keys-bg-color: #171717;
+  --equal-sign-bg-color: #dddddd;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--body-bg-color);
+}
+
+.calculator {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  background: var(--calculator-app-color);
+  width: 100%;
+  max-width: 400px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+.display {
+  height: 200px;
+  padding: 20px;
+  background: var(--display-bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.display .input {
+  font-size: 1.5rem;
+  margin-bottom: 0.7px;
+}
+
+.display .output {
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  overflow: auto;
+}
+
+.display .operator {
+  color: var(--calculator-app-color);
+}
+
+.display .brackets,
+.display .percent {
+  color: var(--calc-bg-color);
+}
+
+.keys {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.keys .key {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  height: 0;
+  padding-top: 100%;
+  background: var(--keys-bg-color);
+  border-radius: 50%;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.keys .key i {
+  font-size: 1.5rem;
+}
+
+.keys .key span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+.keys .key.action {
+  background: var(--display-bg-color);
+}
+
+.keys .key.operator {
+  background: var(--action-operator-color);
+}
+
+.keys .key.equal-sign {
+  color: var(--buttons-color);
+  background: var(--equal-sign-bg-color);
+}
+
+.keys .key:hover {
+  transform: scale(0.95);
+  transition: all 0.2s;
+}
